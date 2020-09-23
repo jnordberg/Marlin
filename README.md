@@ -26,8 +26,8 @@ The Marlin UI makes calibrating deltas very tedious, if you know of a better met
   5. Remove the nozzle probe
   6. Go to `Temperature` and select `Preheat PLA` and wait 5 minutes for the temperatures to even out and the materials to fully expand
   7. Go to `Motion` select `Auto Home` when finished use Move Z to lower the nozzle towards the build plate until it barley drags on a piece of paper
-    * ⚠️ You can crash the nozzle into the build plate at this point
-    * If your nozzle can't reach the paper disable software endstops from the motion menu to move past Z0
+      * ⚠️ You can crash the nozzle into the build plate at this point
+      * If your nozzle can't reach the paper disable software endstops from the motion menu to move past Z0
   8. Write down the Z offset where the nozzle barely drags on the paper
   9. Go to `Configuration -> Delta Calibration -> Delta Settings` and subtract the Z offset from it
   10. Finally save settings `Configuration -> Store Settings`
