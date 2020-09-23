@@ -1,3 +1,42 @@
+# Marlin v2 for FLSUN Q5
+
+Marlin 2.x configuration (and potentially patches) for the FLSUN Q5 Delta 3D Printer.
+
+## Install from release
+
+  1. Grab the [latest release](https://github.com/jnordberg/Marlin/releases/latest)
+  2. Copy `Robin_nano.bin` to the root of a microSD card
+  3. Insert the microSD card in your printer and power it on
+
+## Install from source
+
+ 1. Checkout repo and build (see Marlin documentation for assistance)
+ 2. Copy the built `Robin_nano35.bin` to the root of a microSD card (usually located under `.pio/build/mks_robin_nano35/`)
+ 3. Rename `Robin_nano35.bin` to `Robin_nano.bin`
+ 4. Insert the microSD card in your printer and power it on
+
+## Calibrating using Marlin LCD
+
+The Marlin UI makes calibrating deltas very tedious, if you know of a better method please let me know. Fortunately you don't need to do this often.
+
+  1. Clean the build plate
+  2. Go to `Configuration -> Delta Calibration` and select `Auto calibration`
+  3. Attach the nozzle probe when prompted (no need to stove it after we'll need it for the next step)
+  4. Go to `Motion` and select `Level Bed`
+  5. Remove the nozzle probe
+  6. Go to `Temperature` and select `Preheat PLA` and wait 5 minutes for the temperatures to even out and the materials to fully expand
+  7. Go to `Motion` select `Auto Home` when finished use Move Z to lower the nozzle towards the build plate until it barley drags on a piece of paper
+    * ⚠️ You can crash the nozzle into the build plate at this point
+    * If your nozzle can't reach the paper disable software endstops from the motion menu to move past Z0
+  8. Write down the Z offset where the nozzle barely drags on the paper
+  9. Go to `Configuration -> Delta Calibration -> Delta Settings` and subtract the Z offset from it
+  10. Finally save settings `Configuration -> Store Settings`
+  11. Go print some accurate parts at 100mm/sec
+
+  If you really want to dial in your tolerances [follow this calibration procedure](https://www.thingiverse.com/thing:1274733) to find your exact delta rod length and repeat the calibration procedure.
+
+---
+
 # Marlin 3D Printer Firmware
 
 ![GitHub](https://img.shields.io/github/license/marlinfirmware/marlin.svg)
